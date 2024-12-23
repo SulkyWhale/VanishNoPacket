@@ -12,7 +12,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <vnp-version>${project.version}-unofficial</vnp-version>
+        <vnp-version>${project.version}-Sulky</vnp-version>
     </properties>
 
     <profiles>
