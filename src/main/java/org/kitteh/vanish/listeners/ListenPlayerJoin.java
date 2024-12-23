@@ -59,20 +59,14 @@ public final class ListenPlayerJoin implements Listener {
             statusUpdate.append("vanished");
         }
         if (VanishPerms.joinWithoutAnnounce(event.getPlayer())) {
-            this.plugin.getManager().getAnnounceManipulator().addToDelayedAnnounce(event.getPlayer().getName());
-            if (this.plugin.isPaper()) {
-                event.joinMessage(null);
-            } else {
-                //noinspection deprecation
-                event.setJoinMessage(null);
-            }
-            if (statusUpdate.length() != 0) {
+            event.joinMessage(null);
+            if (!statusUpdate.isEmpty()) {
                 statusUpdate.append(" and ");
             }
             statusUpdate.append("silently");
         }
-        if (statusUpdate.length() != 0) {
-            this.plugin.messageStatusUpdate(ChatColor.DARK_AQUA + event.getPlayer().getName() + " has joined " + statusUpdate.toString());
+        if (!statusUpdate.isEmpty()) {
+            this.plugin.messageStatusUpdate(ChatColor.DARK_AQUA + event.getPlayer().getName() + " has joined " + statusUpdate);
         }
     }
 }
